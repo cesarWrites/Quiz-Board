@@ -1,11 +1,11 @@
 //Define the array containing all questions
-const quizData = [
+const allQuestions = [
     {
       question:"Which of the following is a markdown language?",
             a: "HTML",
             b: "CSS",
             c: "SQL",
-            c: "Python",
+            d: "Python",
             correct:"a"
     },
     {
@@ -38,38 +38,39 @@ const quizData = [
     c: "const",
     d: "div",
     correct: "c"
-    }
+    },
 ];
 
-const quiz= document.getElementById('quiz')
+//define al constant variables to hold questions and answers
+const quiz= document.getElementById('quiz-board')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
 const a_text = document.getElementById('a_text')
 const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
-const submitBtn = document.getElementById('submit')
+const button = document.getElementById('btn')
 
-
-let currentQuiz = 0
+//initialize the score and curent question 
+let currentQuestion = 0
 let score = 0
 
 getQuestions()
 
 function getQuestions() {
 
-    deselectAnswers()
+    removeCheckedAns()
 
-    const currentQuizData = quizData[currentQuiz]
+    const currentQuizNum = allQuestions[currentQuestion]
 
-    questionEl.innerText = currentQuizData.question
-    a_text.innerText = currentQuizData.a
-    b_text.innerText = currentQuizData.b
-    c_text.innerText = currentQuizData.c
-    d_text.innerText = currentQuizData.d
+    questionEl.innerText = currentQuizNum.question
+    a_text.innerText = currentQuizNum.a
+    b_text.innerText = currentQuizNum.b
+    c_text.innerText = currentQuizNum.c
+    d_text.innerText = currentQuizNum.d
 }
 
-function deselectAnswers() {
+function removeCheckedAns() {
     answerEls.forEach(answerEl => answerEl.checked = false)
 }
 
@@ -84,20 +85,20 @@ function getSelected() {
 }
 
 
-submitBtn.addEventListener('click', () => {
+button.addEventListener('click', () => {
     const answer = getSelected()
     if(answer) {
-       if(answer === quizData[currentQuiz].correct) {
-           score;
+       if(answer === allQuestions[currentQuestion].correct) {
+           score++;
        }
 
-       currentQuiz++
+       currentQuestion++
 
-       if(currentQuiz < quizData.length) {
+       if(currentQuestion < allQuestions.length) {
            getQuestions()
        } else {
            quiz.innerHTML = `
-           <div>You scored ${score}</div>
+           <div>You scored ${score * 20} </div>
 
            <button onclick="location.reload()">Reload</button>
            `

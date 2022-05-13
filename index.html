@@ -4,43 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Board</title>
     <link href="./Assets/css/index.css" rel="stylesheet">
 </head>
 <body>
-<!--
-    <div id="quiz-board">
-        <div class="quiz">
-            <h1 id="question-text">Take your first quiz</h1>
-            <ul>
-                <li>
-                    <input type="radio" name="answer" id="a">
-                    <label for ="a" id="aTxt">Answer</label>
-                </li>
-                <li>
-                    <input type="radio" name="answer" id="b">
-                    <label for="b" id="bTxt">Answer</label>
-                </li>
-                <li>
-                    <input type="radio" name="answer" id="c">
-                    <label for="c" id="cTxt">Answer</label>
-                </li>
-                <li>
-                    <input type="radio" name="answer" id="d">
-                    <label for="d" id="dTxt">Answer</label>
-                </li>
-            </ul>
-        </div>
-        <button id="btn">Submit</button>
-    </div>
-    <div id="results"></div>-->
-    <div class="quiz-container" id="quiz">
-    <div class="quiz-header">
-      <h2 id="question">Question Text</h2>
+    <div class="container">
+
+    <div class="quiz" id="quiz-board">
+    <div class="quiz-body">
+      <h1 id="question">Question Text</h1>
       <form>
         
           <input type="radio" name="answer" id="a" class="answer">
-          <label for="a" id="a_text">Answer</label>
+          <label for="a" id="a_text">Answer
+          <span class="check-mark"></span>
+          </label>
         
           <input type="radio" name="answer" id="b" class="answer">
           <label for="b" id="b_text">Answer</label>
@@ -54,8 +32,9 @@
      
     </div>
 
-    <button id="submit">Submit</button>
-
+    <button id="btn">Submit</button>
+  </div>
+  <div id="result"></div>
   </div>
     <script src="./Assets/javascript/index.js"></script>
 </body>
