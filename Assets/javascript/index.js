@@ -45,7 +45,7 @@ const allQuestions = [
 const quiz= document.getElementById('quiz-board')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
-const a_text = document.getElementById('a_text')
+const a_text = document.getElementById('a_text') 
 const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
@@ -64,8 +64,8 @@ function getQuestions() {
     const currentQuizNum = allQuestions[currentQuestion]
 
     questionEl.innerText = currentQuizNum.question
-    a_text.innerText = currentQuizNum.a
-    b_text.innerText = currentQuizNum.b
+    a_text.innerText = currentQuizNum.a 
+    b_text.innerText = currentQuizNum.b 
     c_text.innerText = currentQuizNum.c
     d_text.innerText = currentQuizNum.d
 }
