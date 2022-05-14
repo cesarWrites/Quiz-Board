@@ -7,9 +7,12 @@ body{
     display: flex;
 }
 .sect1{
-    background-color: black;
+    background:radial-gradient( rgb(51, 49, 47), rgb(19, 18, 18), rgb(7, 7, 7) );
     font-size: 30px;
     color: white;
+}
+nav ul{
+    list-style: none;
 }
 .quiz{
 width: 600px;
@@ -53,12 +56,13 @@ margin-left: 25%;
     margin-left: 20px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .quiz {
         margin: 0;
-        width: max-content;
+        width: fit-content;
         font-size: 10px;
-        height: max-content;
+        height: fit-content;
+        display: block;
     }
     .quiz h1{
         font-size: 1.5rem;
@@ -67,11 +71,16 @@ margin-left: 25%;
         font-size: 2.5rem;
     }
     body{
-        max-width: 40vh;
-        max-height: 40vh;
-    }
-}
+        width: fit-content;
+        margin: 0;
+        height: fit-content;
+        font-size: 10px;
 
-#result{
-    font-size: large;
+}
+.sect1{
+    width: fit-content;
+    height: 40vh;
+    margin-right: 5%;
+    font-size: 10px;
+}
 }
