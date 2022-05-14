@@ -17,7 +17,7 @@ const allQuestions = [
         correct: "a"
     },
     {
-        question:"Which of teh following is a low level language?",
+        question:"Which of the following is a low level language?",
         a:"Python",
         b:"C++",
         c:"Lisp",
@@ -29,7 +29,8 @@ const allQuestions = [
         a: "Cascading style sheets",
         b:"Common style sheets",
         c:"column style sheets",
-        d:"I don't know" 
+        d:"I don't know" ,
+        correct: "a"
     },
     {
     question: "Which of the following is not an HTML element?",
@@ -45,10 +46,10 @@ const allQuestions = [
 const quiz= document.getElementById('quiz-board')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
-const a_text = document.getElementById('a_text') 
-const b_text = document.getElementById('b_text')
-const c_text = document.getElementById('c_text')
-const d_text = document.getElementById('d_text')
+const aTxt = document.getElementById('a-text')
+const bTxt = document.getElementById('b-text')
+const cTxt = document.getElementById('c-text')
+const dTxt = document.getElementById('d-text')
 const button = document.getElementById('btn')
 
 //initialize the score and curent question 
@@ -64,17 +65,18 @@ function getQuestions() {
     const currentQuizNum = allQuestions[currentQuestion]
 
     questionEl.innerText = currentQuizNum.question
-    a_text.innerText = currentQuizNum.a 
-    b_text.innerText = currentQuizNum.b 
-    c_text.innerText = currentQuizNum.c
-    d_text.innerText = currentQuizNum.d
+    aTxt.innerText = currentQuizNum.a
+    bTxt.innerText = currentQuizNum.b
+    cTxt.innerText = currentQuizNum.c
+    dTxt.innerText = currentQuizNum.d
 }
 
+//remove check marks on the answers
 function removeCheckedAns() {
     answerEls.forEach(answerEl => answerEl.checked = false)
 }
 
-function getSelected() {
+function selectAnswer() {
     let answer
     answerEls.forEach(answerEl => {
         if(answerEl.checked) {
@@ -83,10 +85,18 @@ function getSelected() {
     })
     return answer
 }
+var evaluatePerfomance = () => {
+    if (score >= 80){
+        quiz.innerHTML = `
+        <div>Excellent perfomance</div>   `   
+    } else if (score >= 60 && score < 80){
+        quiz.innerHTML = `
+        <div> You fairly passed !` } 
+    }
 
-
+//select button with the correct answer
 button.addEventListener('click', () => {
-    const answer = getSelected()
+    const answer = selectAnswer()
     if(answer) {
        if(answer === allQuestions[currentQuestion].correct) {
            score++;
@@ -98,10 +108,12 @@ button.addEventListener('click', () => {
            getQuestions()
        } else {
            quiz.innerHTML = `
-           <div>You scored ${score * 20} </div>
-
-           <button onclick="location.reload()">Reload</button>
-           `
+           <h2>Hey Hero You scored ${score * 20} points</h2>
+           <button onclick="location.reload()">Reload</button> `
        }
     }
+    evaluatePerfomance()
+            /*else (score < 60){ 
+            `<div>You perfomed poorly. REload to retake teh test. </div>`
+        }*/
 })

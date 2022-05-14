@@ -8,13 +8,15 @@
     <link href="./Assets/css/index.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-    <h1>Quiz<span style="color: yellow;">Board</span></h1>
+    <header class="sect1">
+    <h1 style="color:white;">Quiz<span style="color: yellow;">Board</span></h1>
+    <h2>Explore more quizes!</h2>
     <nav>
-        <a href="./Assets/templates/quiz.html">Networking</a>
-        <a href="">Data Science</a>
+        <ul>
+        <li><a href="./Assets/templates/quiz.html">Networking</a></li>
+        <li><a href="">Data Science</a></li>
+        </ul>
     </nav>
-    <p>Explore more quiz samples above. </p>
     </header>
     <div class="container">
 
@@ -24,23 +26,23 @@
       <form>
         
           <input type="radio" name="answer" id="a" class="answer">
-          <label for="a" id="a_text">Answer</label><br>
+          <label for="a" id="a-text">Answer</label><br>
         
           <input type="radio" name="answer" id="b" class="answer">
-          <label for="b" id="b_text">Answer</label><br>
+          <label for="b" id="b-text">Answer</label><br>
         
           <input type="radio" name="answer" id="c" class="answer">
-          <label for="c" id="c_text">Answer</label><br>
+          <label for="c" id="c-text">Answer</label><br>
     
           <input type="radio" name="answer" id="d" class="answer">
-          <label for="d" id="d_text">Answer</label>
+          <label for="d" id="d-text">Answer</label>
           </form>
      
     </div>
 
     <button id="btn">Submit</button>
+    <div id="result"></div>
   </div>
-  <div id="result"></div>
   </div>
     <script src="./Assets/javascript/index.js"></script>
 </body>

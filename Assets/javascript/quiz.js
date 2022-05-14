@@ -12,21 +12,22 @@ const allQuestions = [
         a:"MAN",
         b:"WAN",
         c:"OSI",
-        d:"LAN"
+        d:"LAN",
+        correct: "c"
     },
     {
         question: "Which is the third layer of teh OSI model",
         a:"network layer",
         b:"transport layer",
         c:"data link layer",
-        d:"appliation layer",
+        d:"appliaction layer",
         correct:"a"
     },
     {
         question:"Which of the following is not a routing protocol?",
         a:"OSPF",
         b:"MAC",
-        C:"BGP",
+        c:"BGP",
         d:"EGP",
         correct:"b"
     },
@@ -45,10 +46,10 @@ const allQuestions = [
 const quiz= document.getElementById('quiz-board')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
-const a_text = document.getElementById('a_text')
-const b_text = document.getElementById('b_text')
-const c_text = document.getElementById('c_text')
-const d_text = document.getElementById('d_text')
+const aTxt = document.getElementById('a-text')
+const bTxt = document.getElementById('b-text')
+const cTxt = document.getElementById('c-ext')
+const dTxt = document.getElementById('d-text')
 const button = document.getElementById('btn')
 
 //initialize the score and curent question 
@@ -64,10 +65,10 @@ function getQuestions() {
     const currentQuizNum = allQuestions[currentQuestion]
 
     questionEl.innerText = currentQuizNum.question
-    a_text.innerText = currentQuizNum.a
-    b_text.innerText = currentQuizNum.b
-    c_text.innerText = currentQuizNum.c
-    d_text.innerText = currentQuizNum.d
+    aTxt.innerText = currentQuizNum.a
+    bTxt.innerText = currentQuizNum.b
+    cTxt.innerText = currentQuizNum.c
+    dTxt.innerText = currentQuizNum.d
 }
 
 function removeCheckedAns() {
@@ -98,7 +99,7 @@ button.addEventListener('click', () => {
            getQuestions()
        } else {
            quiz.innerHTML = `
-           <div>You scored ${score * 20} </div>
+           <div>Hey hero here is your score ${score * 20} </div>
 
            <button onclick="location.reload()">Reload</button>
            `
