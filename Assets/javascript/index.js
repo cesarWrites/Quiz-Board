@@ -42,22 +42,23 @@ const allQuestions = [
     },
 ];
 
-//define al constant variables to hold questions and answers
-const quiz= document.getElementById('quiz-board')
-const answerEls = document.querySelectorAll('.answer')
-const questionEl = document.getElementById('question')
-const aTxt = document.getElementById('a-text')
-const bTxt = document.getElementById('b-text')
-const cTxt = document.getElementById('c-text')
-const dTxt = document.getElementById('d-text')
-const button = document.getElementById('btn')
+//define all constant variables to hold questions, answers  and submit button
+const quiz= document.getElementById('quiz-board');
+const answerEls = document.querySelectorAll('.answer');
+const questionEl = document.getElementById('question');
+const aTxt = document.getElementById('a-text');
+const bTxt = document.getElementById('b-text');
+const cTxt = document.getElementById('c-text');
+const dTxt = document.getElementById('d-text');
+const button = document.getElementById('btn');
+const result = document.getElementById('result');
 
 //initialize the score and curent question 
 let currentQuestion = 0
 let score = 0
 
 getQuestions()
-
+//Display the questions
 function getQuestions() {
 
     removeCheckedAns()
@@ -71,11 +72,11 @@ function getQuestions() {
     dTxt.innerText = currentQuizNum.d
 }
 
-//remove check marks on the answers
+//remove check marks on the radio buttons
 function removeCheckedAns() {
     answerEls.forEach(answerEl => answerEl.checked = false)
 }
-
+ //select answer
 function selectAnswer() {
     let answer
     answerEls.forEach(answerEl => {
@@ -85,6 +86,7 @@ function selectAnswer() {
     })
     return answer
 }
+//Evaluate the level of perfomance on the quiz
 var evaluatePerfomance = () => {
     if (score >= 80){
         quiz.innerHTML = `
@@ -94,7 +96,7 @@ var evaluatePerfomance = () => {
         <div> You fairly passed !` } 
     }
 
-//select button with the correct answer
+//check if submitted answer is correct
 button.addEventListener('click', () => {
     const answer = selectAnswer()
     if(answer) {
@@ -108,12 +110,12 @@ button.addEventListener('click', () => {
            getQuestions()
        } else {
            quiz.innerHTML = `
-           <h2>Hey Hero You scored ${score * 20} points</h2>
+           <h2>Hey Hero &#128516; You scored ${score * 20} points</h2>
            <button onclick="location.reload()">Reload</button> `
        }
     }
     evaluatePerfomance()
             /*else (score < 60){ 
-            `<div>You perfomed poorly. REload to retake teh test. </div>`
+            `<div>You perfomed poorly. Reload to retake teh test. </div>`
         }*/
 })
