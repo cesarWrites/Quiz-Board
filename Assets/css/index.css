@@ -1,3 +1,6 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 body{
     margin: 0;
     min-height: 100vh;
@@ -7,26 +10,27 @@ body{
     display: flex;
 }
 .sect1{
-    background:radial-gradient( rgb(51, 49, 47), rgb(19, 18, 18), rgb(7, 7, 7) );
+    background:radial-gradient( rgb(143, 141, 140), rgb(133, 130, 130), rgb(128, 124, 124) );
     font-size: 30px;
     color: white;
+    padding-right: 5%;
 }
 nav ul{
     list-style: none;
 }
-.quiz{
+.container{
 width: 600px;
 height: 800px;
 padding: 20px 30px;
-margin-top: 40%;
+margin-top: 10%;
 background: linear-gradient(rgb(209, 171, 100), rgb(199, 92, 50), rgb(206, 203, 203));
-box-shadow: 0 10px 10px rgba(0,0,0,0.9);
+box-shadow: 0 10px 10px rgba(126, 124, 124, 0.9);
 background: linear-gradient(120, 100, 50);
 border-top-left-radius: 50px;
 border-top-right-radius: 50px;
 border-bottom-left-radius: 50px;
 border-bottom-right-radius: 50px;
-margin-left: 25%;
+margin-left: 10%;
 
 }
 .quiz-body{
@@ -35,6 +39,28 @@ margin-left: 25%;
 .quiz form{
     font-size: 2rem;
     margin-top: 5%;   
+}
+form input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #ffffff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+form input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    position: relative;
+    background-color: #0e21cf;
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
 }
 .quiz h2{
     margin-top: 100px;
@@ -55,32 +81,31 @@ margin-left: 25%;
 .sect1 h1{
     margin-left: 20px;
 }
+#result{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+}
 
 @media screen and (max-width: 1000px) {
-    .quiz {
+    .container {
         margin: 0;
         width: fit-content;
         font-size: 10px;
         height: fit-content;
-        display: block;
     }
     .quiz h1{
         font-size: 1.5rem;
-    }
-    .quiz-body {
-        font-size: 2.5rem;
     }
     body{
         width: fit-content;
         margin: 0;
         height: fit-content;
         font-size: 10px;
-
 }
 .sect1{
-    width: fit-content;
-    height: 40vh;
-    margin-right: 5%;
+    margin: 0;
     font-size: 10px;
 }
 }
