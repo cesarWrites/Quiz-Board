@@ -78,44 +78,40 @@ function removeCheckedAns() {
 }
  //select answer
 function selectAnswer() {
-    let answer
+    let userAnswer
     answerEls.forEach(answerEl => {
         if(answerEl.checked) {
-            answer = answerEl.id
+            userAnswer = answerEl.id
         }
     })
-    return answer
+    return userAnswer
 }
-//Evaluate the level of perfomance on the quiz
-var evaluatePerfomance = () => {
-    if (score >= 80){
-        quiz.innerHTML = `
-        <div>Excellent perfomance</div>   `   
-    } else if (score >= 60 && score < 80){
-        quiz.innerHTML = `
-        <div> You fairly passed !` } 
-    }
 
 //check if submitted answer is correct
 button.addEventListener('click', () => {
-    const answer = selectAnswer()
-    if(answer) {
-       if(answer === allQuestions[currentQuestion].correct) {
+    const userAnswer = selectAnswer()
+    if(userAnswer) {
+       if(userAnswer === allQuestions[currentQuestion].correct) {
            score++;
        }
 
-       currentQuestion++
+       currentQuestion++;
 
        if(currentQuestion < allQuestions.length) {
            getQuestions()
        } else {
            quiz.innerHTML = `
-           <h2>Hey Hero &#128516; You scored ${score * 20} points</h2>
+           <h2>Hey Hero &#128525; You scored ${score * 20} points</h2>
            <button onclick="location.reload()">Reload</button> `
-       }
+           //evaluate the level of perfomance
+           if ((score * 20) >= 80){
+               result.innerHTML= 'You perfomed well';
+        } else if ( (score* 20)  < 80 && (score * 20)  >= 60){
+            result.innerHTML= 'fairly passed';
+        } else {
+            result.innerHTML ='you need to retake the quiz';
+        }
     }
-    evaluatePerfomance()
-            /*else (score < 60){ 
-            `<div>You perfomed poorly. Reload to retake teh test. </div>`
-        }*/
+}
+
 })
