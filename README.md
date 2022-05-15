@@ -2,9 +2,12 @@
 Sarah Mukuti
 
 ## Description
-<p>This is a quiz board application created using HTML, CSS nad Javascript. It uses DOM and event listeners to dsplay questions and also the results once a user completes teh tasks.</p>
+<p>This is a quiz board application created using HTML, CSS nad Javascript. <br>It uses DOM and event listeners to dsplay questions and also the results once a user completes the tasks.</p>
+<p>The app also displays whether the user perfoms well or needs to retake teh test.</p>
 
 ## Screenshot
+<img src="/home/sarah/moringa-project/quiz-Board/Assets/images/Screenshot from 2022-05-15 20-13-36.png">
+<img src="/home/sarah/moringa-project/quiz-Board/Assets/images/Screenshot from 2022-05-15 20-13-49.png">
 
 ## Installation process
 clone the respository on your machine 
@@ -17,9 +20,6 @@ node js
 <p>HTML</p>
 <p>Javascipt</p>
 <p>CSS</p>
-
-## Issues
-
 
 ### Technologies Used
 HTML
