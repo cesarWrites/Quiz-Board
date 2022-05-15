@@ -6,8 +6,8 @@ Sarah Mukuti
 <p>The app also displays whether the user perfoms well or needs to retake teh test.</p>
 
 ## Screenshot
-<img src="/home/sarah/moringa-project/quiz-Board/Assets/images/Screenshot from 2022-05-15 20-13-36.png">
-<img src="/home/sarah/moringa-project/quiz-Board/Assets/images/Screenshot from 2022-05-15 20-13-49.png">
+<img src="./Assets/images/Screenshot from 2022-05-15 20-13-36.png">
+<img src="./Assets/images/Screenshot from 2022-05-15 20-13-49.png">
 
 ## Installation process
 clone the respository on your machine 
